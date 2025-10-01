@@ -25,10 +25,11 @@ jobs:
         run: mkdir artifact
 
       - name: Copy artifact
-        run: C:\Users\bielcb\Desktop\Fisica-I-I-main\Build\PhysicsGame\Release\Win32\PhysicsGame.exe ./artifact
+        run: copy ./Build/PhysicsGame/Release/Win32/PhysicsGame.exe ./artifact
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: PhysicsGame
           path: ./artifact
+          name: PhysicsGame
+          
