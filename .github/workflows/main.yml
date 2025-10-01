@@ -1,1 +1,19 @@
-main: Build
+name: Build
+
+on:
+  push:
+    branches:
+    - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
